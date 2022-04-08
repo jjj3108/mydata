@@ -1,11 +1,11 @@
-package com;
+package mdata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com", "md.controller"})
+@ComponentScan(basePackages = {"mdata.com", "mdata.md"})
 public class MydataApplication {
 
 	public static void main(String[] args) {
