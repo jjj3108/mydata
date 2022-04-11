@@ -1,4 +1,4 @@
-package mdata.md.controller;
+package mdata.md.main.controller;
 
 import java.util.Map;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import mdata.md.service.MAIN0010Service;
+import mdata.md.main.service.MAIN0010Service;
 
 @Controller
 public class MAIN0010Controller {
@@ -22,14 +22,14 @@ public class MAIN0010Controller {
 	@Autowired
 	MAIN0010Service main0010Service;
 	
-	@RequestMapping(value = "/MAIN0010", method = RequestMethod.GET)
+	@RequestMapping(value = "/comm/MAIN0010", method = RequestMethod.GET)
 	@ResponseBody
 	public ModelAndView viewMAIN0010(@RequestParam(required = false) Map<String, Object> params) {
 		
 		logger.info("MAIN0010 START");
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/MAIN0010");
+		mv.setViewName("/comm/MAIN0010");
 		
 		mv.addObject("INBOUND01", params);
 

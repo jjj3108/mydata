@@ -1,4 +1,4 @@
-package mdata.md.service;
+package mdata.md.main.service;
 
 import org.springframework.stereotype.Service;
 
