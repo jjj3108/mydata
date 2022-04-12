@@ -11,22 +11,22 @@ import javax.servlet.ServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
+@Component
 public class myfilter implements Filter{
 	
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException{
-		
+		logger.info("INIT_FILTER");
 	}
 	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException{
 		logger.info("DOFILTER");
-		int i = 1;
-		int k = 2;
-		return;
+		chain.doFilter(request, response);
 	}
 	
 	@Override
