@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="common/layout/ap-template">
+	
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="scrn-id" content="화면아이디"/>
+<meta name="description" content="화면설명"/>
+
+<title>샘플</title>
+
+<script type="text/javascript">
+var app;
+$(function() {
+	new Vue({
+		el: '#app',
+		components: {
+		},
+		mixins: [comUiMixin, dataformatMixin],
+		data: {
+			TestData: {
+				text1: "",
+				text2: "",
+				
+				cities: ["Seoul", "Tokyo", "Beijing", "Washington D.C"],
+				select1: "Washington D.C",
+				select2: "",
+				
+				check1: true,
+				check2: false,
+				
+				color: "primary",
+				raised: true,
+				squareCells: false,
+				
+				switch1: true,
+				switch2: true,
+				
+				slider1: 20,
+				slider2: 40,
+				
+				loading: true,
+				
+				radio1: true,
+				radio2: false,
+				
+				groupOptions: ["김밥", "라면", "만두"],
+				rg1: "",
+				cg1: []
+			}
+		},
+		mounted: function() {
+			this.initialized();
+		},
+		methods: {
+			initialized: function() {
+				console.log("view is initialized!!");
+			},
+			openModal: function(ref) {
+				this.$refs[ref].open();
+			},
+			closeModal: function(ref) {
+				this.$refs[ref].close();
+			}
+		}
+	});
+});
+
+
+</script>
+
+</head>
+<body>
+
+<th:block layout:fragment="headerTitle">Component</th:block>
+
+<!-- Wrapper -->
+<th:block layout:fragment="container">
+
+<section id="app" class="container">
+
+    <div class="contents main-con">
+    
+ 
+
+    </div>
+</section>
+
+</th:block>
+
+</body>
+</html>

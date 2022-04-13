@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	lang="ko">
+<head>
+	<title>IBKS Common</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<th:block th:replace="common/fragments/ap-template-config :: configFragment" ></th:block>
+	
+</head>
+
+<body>
+
+	<!-- wrap -->
+	<div class="wrapper app-main top-fixed btm-fixed">
+		<!-- contents : waiting logo -->
+		<div id="___loading_div" style="display:none;">
+			<div id="___prevent_div" style="left: 0px;top: 0px;width: 100%;height: 100%;position: fixed;z-index: 99998;background-color: rgb(238, 238, 238);opacity: 0.4;"></div>
+			<div id="___ing_div" style="position: fixed;top: calc(50% - 35px);left: calc(50% - 35px);z-index: 99999;background-color: transparent;"><img hspace="0" class="waiting" border="0" src="/resources/img/waiting.gif" alt="로딩중"></div>
+		</div>
+	
+		<th:block th:replace="common/fragments/ap-template-header :: headerFragment"></th:block>
+		
+		<div class="contentsContainer">
+			<div class="d-flex" id="wrapper">
+				<th:block th:replace="common/fragments/ap-template-lnb :: lnbFragment"></th:block>
+				
+				<div class="page-content-wrapper" id = "rootContent">
+					<div class="container-fluid">
+						<th:block layout:fragment="container"></th:block>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+
+		
+	</div>
+	<!-- //wrap -->
+
+	<th:block th:replace="common/fragments/ap-template-footer :: footerFragment"></th:block>
+	
+</body>
+</html>

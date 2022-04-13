@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+<body>
+	<!-- header -->
+	<th:block th:fragment="headerFragment">
+		<header class="pop-head">
+	        <h1 class="p-tit"><th:block layout:fragment="headerTitle"></th:block></h1>
+	        <button onclick="iwindow.closePopup()" type="button" class="p-close">닫기</button>
+		</header>
+	</th:block>
+	<!-- //header -->
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<th:block th:fragment="configFragment">
+
+	<link type="text/css" href="/resources/css/openapi/jquery-confirm.css" rel="stylesheet">
+	<link type="text/css" href="/resources/css/openapi/jquery-confirm-custom.css" rel="stylesheet">
+	
+	<link type="text/css" href="/resources/css/openapi/keen-ui.min.css" rel="stylesheet">
+		
+	<!--재혁 sidebar추가-->
+	<link href="/resources/css/styles.css" rel="stylesheet" type="text/css">
+
+	<link href="/resources/test/css/common-ui.css" rel="stylesheet" type="text/css">
+	<link href="/resources/css/common.css" rel="stylesheet" type="text/css">
+	<link href="/resources/js/openapi/datatables/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+	<script src="/resources/js/openapi/jquery-3.6.0.min.js"></script>
+	<script src="/resources/js/openapi/jquery-ui.min.js"></script>
+	<script src="/resources/js/openapi/jquery-confirm.js"></script>
+	<script src="/resources/js/openapi/jquery.inputmask.js"></script>
+
+	<script src="/resources/js/openapi/polyfill.min.js"></script>
+	<script src="/resources/js/openapi/promise.polyfill.min.js"></script>
+	<script src="/resources/js/openapi/fetch.umd.3.0.0.js"></script>
+
+	<script src="/resources/js/openapi/datatables/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
+	<script src="/resources/js/openapi/datatables/DataTables-1.10.20/js/dataTables.bootstrap.js"></script>
+	
+	<!-- flot chart -->
+	<script src="/resources/js/openapi/flot/jquery.flot.cust.min.js"></script>
+	<script src="/resources/js/openapi/flot/jquery.flot.resize.min.js"></script>
+	<script src="/resources/js/openapi/flot/jquery.flot.fillbetween.min.js"></script>
+	<script src="/resources/js/openapi/flot/jquery.flot.orderBar.min.js"></script>
+	<script src="/resources/js/openapi/flot/jquery.flot.pie.min.js"></script>
+	<script src="/resources/js/openapi/flot/jquery.flot.time.min.js"></script>
+	<script src="/resources/js/openapi/flot/jquery.flot.tooltip.min.js"></script>
+	<script src="/resources/js/openapi/vue/vue.min.js"></script>
+	<script src="/resources/js/openapi/keen-ui.min.js"></script>
+	<script src="/resources/js/openapi/moment.min.js"></script>
+
+	<script src="/resources/js/openapi/vue/simple-vue-validator.js"></script>
+	<script type="text/javascript">
+		/*
+		 * The default mode is interactive, in this mode, the library will actively update validation result when user makes changes to the form. Normally the validation happens immediately when user is typing, but this can be delayed if v-model.lazy is used.
+		 * The second mode is manual, in this mode, the validation is triggered only when $validate() method is explicitly called.
+		 * The last mode is conservative, in this mode, the validation is passive at first, just the same as manual mode. But once the $validate() method is called, it becomes active and acts exactly like interactive mode.
+		 */
+		Vue.use(SimpleVueValidator, { mode: 'manual' });
+		Validator = window.SimpleVueValidator.Validator;
+	</script>
+
+	<!-- Session 데이터 사용을 위한 구문 -->
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+		$session = /*[[ ${_session} ]]*/ {};
+		$screeninfo = /*[[ ${screeninfo} ]]*/ {};
+	/*]]>*/
+	</script>
+	
+	<script src="/resources/js/common/com-component.js"></script>
+	<script src="/resources/js/common/com-util.js"></script>
+	<script src="/resources/js/common/com-message.js"></script>
+	<script src="/resources/js/common/com-navigator.js"></script>
+	<script src="/resources/js/common/com-popup.js"></script>
+	<script src="/resources/js/common/com-dataformat.js"></script>
+	<script src="/resources/js/common/com-submission.js"></script>
+	<script src="/resources/js/common/com-masking.js"></script>
+	<script src="/resources/js/common/com-validate.js"></script>
+	<script src="/resources/js/common/com-security.js"></script>
+	<script src="/resources/js/common/com-initialize.js"></script>
+	<script src="/resources/js/common/com-datatable.js"></script>
+	<script src="/resources/js/common.js"></script>
+	
+	<script src="/resources/js/vue-mixin/com-ui-mixin.js"></script>
+	<script src="/resources/js/vue-mixin/com-validate-component-mixin.js"></script>
+	
+	<script src="/resources/js/vue-component/com-focus-container.js"></script>
+	<script src="/resources/js/vue-component/com-input.js"></script>
+	<script src="/resources/js/vue-component/com-select.js"></script>
+	<script src="/resources/js/vue-component/com-datepicker.js"></script>
+	<script src="/resources/js/vue-component/com-datepicker-range.js"></script>
+	<script src="/resources/js/vue-component/com-stepper.js"></script>
+	<script src="/resources/js/vue-component/com-submenubar.js"></script>
+	<script src="/resources/js/vue-component/com-titlearea.js"></script>
+	<script src="/resources/js/vue-component/com-tooltip.js"></script>
+	<script src="/resources/js/vue-component/com-option-selector.js"></script>
+		<script src="/resources/js/vue-component/com-nodata.js"></script>
+
+	<script src="/resources/js/vue-mixin/com-dataformat-mixin.js"></script>
+	<script src="/resources/js/vue-mixin/com-encrypt-mixin.js"></script>
+	<!-- //Session 데이터 사용을 위한 구문 -->
+	
+		
+	<!-- 재혁 sidebar추가 -->
+	<script src="/resources/js/scripts.js"></script>
+
+</th:block>
+
+</html>

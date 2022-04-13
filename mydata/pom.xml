@@ -38,15 +38,23 @@
 		    <groupId>ch.qos.logback</groupId>
 		    <artifactId>logback-classic</artifactId>
 		</dependency>
+		
+		
+		<!-- web mvc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
 		</dependency>
 		
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-devtools</artifactId>
+		    <optional>true</optional>
 		</dependency>
 	</dependencies>
 

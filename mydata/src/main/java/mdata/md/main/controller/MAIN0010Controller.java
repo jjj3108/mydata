@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,19 @@ public class MAIN0010Controller {
 	
 	@Autowired
 	MAIN0010Service main0010Service;
+	
+	@GetMapping("/")
+	public ModelAndView viewBLANK(@RequestParam(required = false) Map<String, Object> params) {
+		
+		logger.info("BLANK START");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/BLANK");
+		
+		mv.addObject("INBOUND01", params);
+
+		return mv;
+	}
 	
 	@RequestMapping(value = "/comm/MAIN0010", method = RequestMethod.GET)
 	@ResponseBody

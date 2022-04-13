@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+	<!-- footer -->
+	<th:block th:fragment="footerFragment">
+		<div class="footer" id="footer" v-cloak>
+			<div class="footer-contents">
+				<div>
+					<div class="links">
+						<a href="/LINK1" class="text-btn" title="링크1">링크#1</a>
+					</div>
+					<p class="address">서울 특별시 중구 퇴계로 141-7 뉴서울빌딩 IBK시스템</p>
+					<p class="copyright">COPYRIGHT © IBK System All Rights Reserved.</p>
+				</div>
+				<div class="family-site">
+					<com-select class="selector" name="패밀리사이트" v-on:change="linkSite" v-model="familySite" v-bind:placeholder="folders[0].name" v-bind:options="folders[0].subs"></com-select>
+				</div>
+			</div>
+			
+		</div>
+		
+		<script th:inline="javascript" type="text/javascript">
+			/*<![CDATA[*/
+			$(function() {
+				var footer_app = new Vue({
+					el: '#footer',
+					data: {
+						familySite: '',
+						folders : [{
+							name:'패밀리사이트',
+							subs: [
+								{label: '사이트', value: 'https://www.ibks1.go.kr'},
+							]
+						}]
+					},
+					mounted: function() {
+					}
+					,
+					methods: {
+						linkSite: function() {
+							window.open(footer_app.familySite);
+						},
+						goSite: function(gbn) {
+							var url = "/ns/getAddr/"+gbn;
+							var param = new Object();
+							submission.sendpost(url, param)
+							.then(function(response) {
+								window.open(response.addr);								
+							})
+							.catch(function(err) {
+						    });
+							
+						}
+					}
+					
+				})
+			});
+			/*]]>*/
+
+			function setFooterDesc() {
+		
+			}
+			function notready() {
+				imessage.show("준비중입니다.");
+			}
+			setFooterDesc();
+		</script>
+		
+	</th:block>
+	<!-- //footer -->
+</body>
+
+</html>

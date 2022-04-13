@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+<body>
+	<!-- header -->
+	<th:block th:fragment="headerFragment">
+		<header class="header">
+	        <div class="navbar">
+	            <!-- <button type="button" class="prev-page">
+	                <span>GO PREV</span>
+	            </button> -->
+	            <!--<h1 class="logo"><img src="/resources/images/ibks_logo_sub.gif" alt="IBKSYSTEM"></h1>-->
+	            <!-- <h1 class="tit">TITLE</h1> -->
+	            <h1 class="tit"><th:block layout:fragment="headerTitle"></th:block></h1>
+	            <button type="button" class="sidenav-open"><span>OPEN MENU</span></button>
+	        </div>
+	    </header>
+	</th:block>
+	<!-- //header -->
+</body>
+
+</html>
