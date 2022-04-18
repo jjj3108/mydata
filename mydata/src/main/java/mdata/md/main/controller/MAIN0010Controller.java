@@ -42,6 +42,8 @@ public class MAIN0010Controller {
 		
 		logger.info("MAIN0010 START");
 		
+		main0010Service.isTrue();
+		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/comm/MAIN0010");
 		
