@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -25,8 +27,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import mdata.common.interceptor.myinterceptor;
 
-@Component
+@Configuration
+@EnableWebMvc
 public class MvcConfig implements WebMvcConfigurer{
+
+	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	@Override
 	public void configurePathMatch(PathMatchConfigurer configurer) {
@@ -73,8 +78,7 @@ public class MvcConfig implements WebMvcConfigurer{
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		// TODO Auto-generated method stub
-		WebMvcConfigurer.super.addResourceHandlers(registry);
+		registry.addResourceHandler("/**").addResourceLocations("/", "/resources/", "classpath:/static/");
 	}
 
 	@Override
@@ -142,7 +146,5 @@ public class MvcConfig implements WebMvcConfigurer{
 		// TODO Auto-generated method stub
 		return WebMvcConfigurer.super.getMessageCodesResolver();
 	}
-
-	private final Logger logger = LoggerFactory.getLogger(getClass());
 
 }
