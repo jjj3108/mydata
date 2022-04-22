@@ -20,7 +20,7 @@ public class myfilter implements Filter{
 	
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException{
-		logger.info("INIT_FILTER");
+		logger.info("myfilter INIT_FILTER");
 	}
 	
 	@Override
